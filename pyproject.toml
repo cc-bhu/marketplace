@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "marketplace"
+version = "0.1.0"
+description = ""
+authors = ["Pradyumna Krishna <git@onpy.in>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^4.2.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^2.17.4"
+black = "^23.3.0"
+isort = "^5.12.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.format]
+max-line-length = "100"
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
