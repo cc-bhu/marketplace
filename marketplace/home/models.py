@@ -1,5 +1,7 @@
-from django.db import models
 import uuid
+
+from django.db import models
+
 
 # Create your models here.
 class Product(models.Model):
@@ -9,4 +11,4 @@ class Product(models.Model):
     description = models.TextField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    product_image = models.ImageField(upload_to='product_images/', blank=True, null=True)
+    product_image = models.ImageField(upload_to="product_images/", blank=True, null=True)
