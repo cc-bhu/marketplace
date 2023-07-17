@@ -1,9 +1,11 @@
 from django.urls import path
 
-from .views import root
+from .form import ProductForm
+from .views import addproduct, root
 
 app_name = "home"
 
 urlpatterns = [
     path("", root, name="root"),
+    path("addproduct", addproduct, name="addproduct"),
 ]
