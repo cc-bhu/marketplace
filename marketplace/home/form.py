@@ -1,7 +1,14 @@
 from django import forms
 
+from .models import Product
 
-class ProductForm(forms.Form):
-    name = forms.CharField(label="product name", max_length=100)
-    price = forms.FloatField(label="product price")
-    description = forms.CharField(label="product description", max_length=255)
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ["name", "price", "description"]
+        widgets = {
+            "name": forms.TextInput(attrs={"class": "form-control"}),
+            "price": forms.NumberInput(attrs={"class": "form-control"}),
+            "description": forms.Textarea(attrs={"class": "form-control"}),
+        }
