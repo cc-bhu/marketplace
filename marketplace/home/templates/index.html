@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Marketplace | Home</title>
-    <!-- Include Bootstrap CSS -->
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">
-                
-                <img width="80px" src="{% static 'img/logo.jpg' %}" alt="">
-            </a>
-        </nav>
-    </header>
+{% extends "base.html" %}
 
+{% block content %}
     <!-- Main Content Section -->
-    <div class="container">
-        <h1>Welcome to the Marketplace!</h1>
-        <p>Discover amazing products and connect with sellers.</p>
-        <a href="#" class="btn btn-primary">Browse Products</a>
-    </div>
-</body>
-</html>
-
+    <h1>Welcome to the Marketplace!</h1>
+    <p>Discover amazing products and connect with sellers.</p>
+    <a href="#" class="btn btn-primary">Browse Products</a>
+{% endblock content %}
