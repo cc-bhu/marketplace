@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>Add Product</h1>
-    <form class="form-group" action="/addproduct/" method="post">
+    <form class="form-group" action="/addproduct" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input class="btn btn-primary" type="submit" value="Submit">
