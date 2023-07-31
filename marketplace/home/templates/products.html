@@ -1,13 +1,10 @@
 {% extends "base.html" %}
-{% load static %} 
-
-
+{% load static %}
 {% block content %}
-    <h1> Products</h1>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-
+<h1> Products</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
     {% for product in products %}
-        <div class="col">
+    <div class="col">
         <div class="card" style="width: 18rem;">
             {% if product.image %}
             <img src="{{ product.image }}" class="card-img-top" alt="...">
@@ -20,12 +17,7 @@
                 <p class="card-text">Rs. {{product.price}}</p>
             </div>
         </div>
-        </div>
-
+    </div>
     {% endfor %}
-        </div>
-
-
-
-    
+</div>
 {% endblock content %}
