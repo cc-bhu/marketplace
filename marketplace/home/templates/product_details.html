@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+                <div class="col-md-6">
+                    <div class="grid gap-0 row-gap-12">
+                            <img class="p-2 g-col-6" src="{% static 'img/place_holder.svg' %}" style="width:200px ; float: right; height: 200px;"  class="rounded float-start" alt="IMAGE">
+                            <h1  class="p-2 g-col-6" class="product-name">{{ product.name }}</h1>
+                            <p  class="p-2 g-col-6" class="product-description">{{ product.description }}</p>
+                            <h2 class="p-2 g-col-6" class="product-heading">Price</h2>
+                            <p class="p-2 g-col-6" class="product-price">${{ product.price }}</p>    
+                        </div>
+                    </div>
+                </div>   
+{% endblock content %}

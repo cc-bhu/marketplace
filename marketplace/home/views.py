@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from .form import ProductForm
 from .models import Product
@@ -24,3 +24,9 @@ def addproduct(request):
     else:
         form = ProductForm()
         return render(request, "addproduct.html", {"form": form})
+
+
+def product_details(request, id):
+    product = get_object_or_404(Product, id=id)
+
+    return render(request, "product_details.html", {"product": product})
