@@ -69,3 +69,5 @@ venv/
 .DS_Store
 .idea
 .vscode
+.env
+firebase.json
