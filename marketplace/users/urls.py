@@ -6,5 +6,5 @@ app_name = 'users'  # Set the app_name
 
 
 urlpatterns = [
-    path('seller_registration',seller_registration, name='seller_registration'),
+    path('/users/seller_registration',seller_registration, name='seller_registration'),
 ]
