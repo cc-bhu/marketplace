@@ -2,7 +2,7 @@
 from django.urls import path
 from.import views
 from .views import seller_registration
-app_name = 'seller'  # Set the app_name
+app_name = 'users'  # Set the app_name
 
 
 urlpatterns = [

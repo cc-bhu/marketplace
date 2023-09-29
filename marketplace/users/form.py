@@ -1,16 +1,17 @@
 from django import forms
 from .models import Seller
+from django.contrib.auth.forms import UserCreationForm
 
-class SellerForm(forms.ModelForm):
+class RegistrationForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
     class Meta:
-        model = Seller  # or your custom User model
-        fields = ['username', 'email']
-        widgets ={
-            "username":forms.TextInput(attrs={"class": "form-control"}),
-            "email":forms.EmailInput(attrs={"class":"form-control"})
-            
-        }
+        model = Seller  # seller model goes here
+        fields = ['username', 'email', 'password1', 'password2']
 
-        
-
-
+    def save(self, commit=True):
+        user = super(RegistrationForm, self).save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+        return user
