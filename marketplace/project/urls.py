@@ -21,4 +21,4 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("marketplace.home.urls", namespace="home")),
     path("", include("marketplace.users.urls", namespace="users")),
-    ]
+]
