@@ -1,11 +1,10 @@
-<!-- seller/templates/seller/seller_registration.html -->
 {% extends 'base.html' %}
 
 {% block content %}
   <h2>Seller Registration</h2>
-  <form  action="" method="post">
+  <form class="form-group" action="users/seller_registration" method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Register</button>
+    <input class="btn btn-primary" type="submit" value="Submit">
   </form>
 {% endblock %}
