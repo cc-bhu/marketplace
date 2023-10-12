@@ -1,3 +1,15 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 
-# Create your views here.
+from .form import RegistrationForm
+
+
+def seller_registration(request):
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect("/")
+
+    form = RegistrationForm()
+    return render(request, "seller_form.html", {"form": form})

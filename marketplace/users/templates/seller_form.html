@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Seller Registration</h2>
+  <form class="form-group" action="users/seller_registration" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Submit">
+  </form>
+{% endblock %}
