@@ -17,10 +17,12 @@ def products(request):
 
 def addproduct(request):
     if request.method == "POST":
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect("/")
+            img_obj = form.instance
+            return render(request, 'addproduct.html', {'form': form, 'img_obj': img_obj})
+            
     else:
         form = ProductForm()
         return render(request, "addproduct.html", {"form": form})

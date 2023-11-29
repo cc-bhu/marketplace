@@ -10,4 +10,6 @@ urlpatterns = [
     path("addproduct", addproduct, name="addproduct"),
     path("products", products, name="products"),
     path("products/<uuid:id>", product_details, name="product_details"),
+     path('upload/', addproduct)
+
 ]
